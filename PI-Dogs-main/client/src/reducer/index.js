@@ -12,6 +12,11 @@ function reducer(state = initialState, action ){
                 dogs: action.payload,
                 dogsAll: action.payload
             }
+        case 'GET_NAME_DOGS':
+            return{
+                ...state,
+                dogs: action.payload
+            }
         case 'GET_TEMPERAMENTS':
             return{
                 ...state,
@@ -51,6 +56,10 @@ function reducer(state = initialState, action ){
                 ...state,
                 dogs : temperamentsFiltered 
 
+            }
+        case 'POST_DOG':
+            return{
+                ...state
             }
 
         case 'FILTER_CREATED':

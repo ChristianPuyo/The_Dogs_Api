@@ -11,10 +11,11 @@ const router = Router();
 // Ejemplo: router.use('/auth', authRouter);
 const getApiInfo = async()=>{
     const apiUrl = await axios.get('https://api.thedogapi.com/v1/breeds');
+    console.log(apiUrl.data)
     const apiInfo = await apiUrl.data.map(el =>{
         return{
             id: el.id,
-            image: el.image.url,
+            image: el.image?.url || "https://cdn.redcanina.es/wp-content/uploads/2022/11/04181609/melanine-1024x683.jpg",
             name: el.name,
             temperaments: el.temperament,
             weight: el.weight.metric

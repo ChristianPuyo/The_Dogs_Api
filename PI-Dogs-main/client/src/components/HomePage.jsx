@@ -5,6 +5,7 @@ import { getDogs, getTemperaments, filterDogsByTemperaments, filterCreated, orde
 import { Link } from "react-router-dom";
 import Card from "./Card";
 import Paginado from "./Paginado";
+import SearchBar from "./SearchBar";
 
 export default function HomePage(){
 
@@ -95,6 +96,10 @@ export default function HomePage(){
 
             <div>
                 <Paginado dogsPerPage= {dogsPerPage} allDogs = {allDogs.length} paginado = {paginado}/>
+            </div>
+
+            <div>
+                <SearchBar/>
             </div>
 
             <div>
